@@ -20,11 +20,14 @@
     </style>
 </head>
 <body>
-    <div id="area" onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()">
+    <div id="area">
         Interaja...
     </div>
     <script>
         var teste = window.document.getElementById('area')
+        teste.addEventListener('click', clicar)
+        teste.addEventListener('mouseenter', entrar)
+        teste.addEventListener('mouseout', sair)
        function clicar(){
         teste.innerText='teste'
         

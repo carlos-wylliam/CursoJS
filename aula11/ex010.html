@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema do DETRAN</title>
+    <style>
+        *{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body{
+            background-color: #4c51c6;
+        }
+        .caixa{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 500px;
+            
+        }
+        .container{
+            background-color: #e9f4ff;
+            height: 200px;
+            padding: 20px;
+            border-radius: 10px;
+            
+        }
+        input[type=button]{
+            background-color: #fd830d;
+            border-style: none;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: bolder;
+            cursor: pointer;
+        }
+        input[type=number]{
+            background-color: #7892ee;
+            border-style: none;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="caixa">
+        <h1>Sistema de multas</h1>
+        <div class="container">
+            <form action="">
+                <label for="vel">Velocidade do Carro:</label>
+                <input type="number" name="num1" id="vel">Km/h
+                <input type="button" value="Verificar" onclick="calcular()">
+            </form>
+            <h2 id="resul" ></h2>
+        </div>
+    </div>
+    <script>
+        function calcular(){
+            var vel = document.getElementById('vel')
+            var velocity = Number(vel.value)
+            var resul = document.getElementById('resul')
+            resul.innerHTML =(`Sua velocidade é de ${velocity}Km/h`)
+            if(velocity > 70){
+                resul.innerHTML(`Você ultrapassou a velocidade permitida, MULTADO...`)
+            } else{
+                resul.innerHTML('Você está dentro da normalidade')
+            }
+            
+        }
+    </script>
+</body>
+</html>

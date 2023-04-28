@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somando valores</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        body{
+            background-color: #e5e5e5;
+        }
+       .pai{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        height: 600px;
+       }
+
+       .bloco{
+        background-color: #14213d;
+        width: 400px;
+        height: 400px;
+        border-radius: 20px;
+        padding: 10px;
+        
+       }
+       h1{
+        color: #fca311;
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+       }
+       .bloco>span{
+        color: #e5e5e5;
+       }
+       input[type=button]{
+        background-color: black;
+        color: #e5e5e5;
+        width: 300px;
+        padding: 10px;
+        border-radius: 15px;
+        border-style: none;
+        margin-top: 10px;
+        margin-left: 10%;
+       }
+       input[type=button]:hover{
+        background-image: linear-gradient(to right, #0000, #fca311);
+        cursor: pointer;
+       }
+       p{
+        text-align: center;
+        font-size: 1.5em;
+        color: #fca311;
+        font-weight: bold;
+
+  
+       }
+       
+    </style>
+</head>
+<body>
+    <div class="pai">
+        <div class="bloco">
+            <h1>Somando valores</h1>
+            <input type="number" name="num1" id="celula1">
+            <span class="material-icons">add</span>
+            <input type="number" name="num1" id="celula2">
+            <input type="button" value="somar" onclick="somar()">
+            <p id="res"></p>
+        </div>
+</div>
+<script>
+     
+    function somar(){
+     var n1 = window.document.getElementById('celula1')
+     var n2 = window.document.getElementById('celula2')
+     var res = window.document.getElementById('res')
+     var num1 = Number(n1.value)
+     var num2 = Number(n2.value)
+     var soma = num1 + num2
+     res.innerHTML = `A soma entre ${num1} e ${num2} é ${soma}`
+    }
+</script>
+</body>
+</html>
