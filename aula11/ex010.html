@@ -41,6 +41,9 @@
             padding: 10px;
             border-radius: 5px;
         }
+        strong{
+            color: #fd830d;
+        }
     </style>
 </head>
 <body>
@@ -61,10 +64,10 @@
             var velocity = Number(vel.value)
             var resul = document.getElementById('resul')
             resul.innerHTML =(`Sua velocidade é de ${velocity}Km/h`)
-            if(velocity > 70){
-                resul.innerHTML(`Você ultrapassou a velocidade permitida, MULTADO...`)
+            if (velocity > 60){
+                resul.innerHTML +=(`<p>Você está <strong>MULTADO</strong> por excesso de velocidade</p>`)
             } else{
-                resul.innerHTML('Você está dentro da normalidade')
+                resul.innerHTML +=(`<p>você está dentro da normalidade`)
             }
             
         }
